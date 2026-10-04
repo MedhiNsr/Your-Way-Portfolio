@@ -1,0 +1,102 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-comfort-very: var(--comfort-very);
+  --color-comfort-good: var(--comfort-good);
+  --color-comfort-moderate: var(--comfort-moderate);
+  --color-comfort-difficult: var(--comfort-difficult);
+  --color-comfort-unknown: var(--comfort-unknown);
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --shadow-soft: 0 1px 2px oklch(0.2 0.04 240 / 0.04), 0 8px 24px oklch(0.2 0.04 240 / 0.06);
+}
+
+:root {
+  --radius: 1rem;
+
+  /* Warm cream background, deep muted navy text */
+  --background: oklch(0.975 0.012 80);
+  --foreground: oklch(0.32 0.045 250);
+
+  --card: oklch(0.995 0.006 80);
+  --card-foreground: oklch(0.32 0.045 250);
+
+  --popover: oklch(0.995 0.006 80);
+  --popover-foreground: oklch(0.32 0.045 250);
+
+  /* Soft dusty rose primary — calm, reassuring */
+  --primary: oklch(0.72 0.07 15);
+  --primary-foreground: oklch(0.99 0.005 85);
+
+  /* Warm blush secondary */
+  --secondary: oklch(0.94 0.022 20);
+  --secondary-foreground: oklch(0.38 0.05 20);
+
+  --muted: oklch(0.955 0.012 80);
+  --muted-foreground: oklch(0.52 0.03 250);
+
+  --accent: oklch(0.9 0.04 20);
+  --accent-foreground: oklch(0.36 0.05 20);
+
+  --destructive: oklch(0.7 0.08 25);
+  --destructive-foreground: oklch(0.99 0.005 85);
+
+  --border: oklch(0.91 0.014 20);
+  --input: oklch(0.93 0.014 20);
+  --ring: oklch(0.72 0.07 15);
+
+  /* Calming pastel comfort scale — pink-tinted */
+  --comfort-very: oklch(0.9 0.04 10);
+  --comfort-good: oklch(0.9 0.035 25);
+  --comfort-moderate: oklch(0.88 0.05 55);
+  --comfort-difficult: oklch(0.84 0.05 30);
+  --comfort-unknown: oklch(0.9 0.012 20);
+}
+
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html, body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+}
